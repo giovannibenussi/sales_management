@@ -35,7 +35,8 @@ module.exports = function jwt(req, res, next) {
 				// 	error_code: 'JWT_INVALID',
 				// 	message: 'Invalid Token',
 				// })
-				return res.forbidden('You are not permitted to perform this action.')
+				return res.json(401, { error: 'Invalid Token'} )
+				// return res.forbidden('You are not permitted to perform this action.')
 			} else {
 				console.log("good")
 				req.decoded = decoded_token;
@@ -48,7 +49,8 @@ module.exports = function jwt(req, res, next) {
 		// 	error_code: 'JWT_NOT_SUPPLIED',
 		// 	message: 'JWT Not Supplied',
 		// });
-		return res.forbidden('You are not permitted to perform this action.')
+		return res.json(401, { error: 'Unauthenticated Request'})
+		// return res.forbidden('You are not permitted to perform this action.')
 	}
 
 	// User is nt allowed

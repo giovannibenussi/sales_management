@@ -21,8 +21,16 @@
   }).controller('UsersNewController', function($scope, $state, Restangular) {
     $scope.form_user = {};
     return $scope.saveUser = function() {
-      return Restangular.all('user').post($scope.form_user).then(function() {
-        return $state.go('admin.users.list');
+      console.log("Creando...");
+      Restangular.all('user').post($scope.form_user).then(function() {
+        console.log("Creado");
+      }, function(error) {
+        console.log("error");
+        if (error.data && error.data.error === "E_VALIDATION" && error.data.invalidAttributes) {
+          _.forEach(error.data.invalidAttributes, function(value, index) {
+            return console.log(i);
+          });
+        }
       });
     };
   });
@@ -36,10 +44,6 @@
         return $state.go('admin.users.list');
       });
     };
-  });
-
-  app.run(function(Restangular) {
-    return Restangular.setBaseUrl('http://localhost:1337/');
   });
 
 }).call(this);
