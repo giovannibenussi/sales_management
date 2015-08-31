@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-md-6">
+    <form class="form-horizontal" role="form">
+      <div class="form-body">
+        <div class="form-group">
+          <label class="col-md-4 control-label">Nombre</label>
+          <div class="col-md-8">
+            <div class="input-icon right">
+              <input class="form-control" ng-model="form_user.firstName" type="text">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4 control-label">Apellido</label>
+          <div class="col-md-8">
+            <div class="input-icon right">
+              <input class="form-control" ng-model="form_user.lastName" type="text">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4 control-label">Nombre de Usuario</label>
+          <div class="col-md-8">
+            <div class="input-icon right">
+              <!-- <i class="fa fa-warning tooltips" data-container="body" data-original-title="please provide an email"></i> -->
+              <input class="form-control" ng-model="form_user.username" type="text">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4 control-label">Contraseña</label>
+          <div class="col-md-8">
+            <div class="input-icon right">
+              <input class="form-control" ng-model="form_user.password" type="password">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-actions">
+        <div class="row">
+          <div class="col-md-offset-4 col-md-8">
+            <button class="btn blue" ng-click="saveUser()" type="submit">Save</button>
+            <button class="btn default" type="button" ui-sref="admin.users.list">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

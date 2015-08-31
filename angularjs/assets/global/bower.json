@@ -1,0 +1,20 @@
+{
+  "name": "plugins",
+  "version": "0.0.0",
+  "authors": [
+    "Giovanni Benussi <giovanni.benussi@usach.cl>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "a0-angular-storage": "~0.0.12",
+    "angular-jwt": "~0.0.9",
+    "ngstorage": "~0.3.9"
+  }
+}
